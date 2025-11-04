@@ -25,11 +25,13 @@
         </div>
 
         <div class="user-actions">
-          <div class="action-item">
-            <span class="icon">👤</span>
-            <span class="label">Giriş Yap <br> Üye Ol</span>
-          </div>
-          <div class="action-item">
+          
+          <RouterLink to="/login" class="action-item-link">
+            <div class="action-item">
+              <span class="icon">👤</span>
+              <span class="label">Giriş Yap <br> Üye Ol</span>
+            </div>
+          </RouterLink> <div class="action-item">
             <span class="icon">🛒</span>
             <span class="label">Sepetim</span>
             <span class="cart-count">0</span>
@@ -56,7 +58,8 @@
 </template>
 
 <script setup>
-// Script setup şimdilik boş kalacak
+// HATA DÜZELTMESİ: RouterLink'i kullanmak için import etmemiz gerekiyor
+import { RouterLink } from 'vue-router';
 </script>
 
 <style scoped>
@@ -68,33 +71,34 @@
     text-decoration: none;
 }
 
-/* KATMANDAN 1 STİLLERİ */
+/* HATA DÜZELTMESİ: RouterLink için yeni stil */
+.action-item-link {
+  text-decoration: none; /* Linkin alt çizgisini kaldırır */
+  color: inherit; /* Rengi üst elementten alır */
+}
+
+/* ... (diğer stiller aynı kalacak) ... */
 .header-top-bar {
   background-color: #383e5c; 
   padding: 0.5rem 0;
   color: #fff;
 }
-
 .top-nav {
   max-width: 1200px;
   margin: 0 auto;
   text-align: right;
   padding: 0 20px;
 }
-
 .top-link {
   color: #ccc;
   text-decoration: none;
   font-size: 0.8rem;
   margin-left: 1.5rem;
 }
-
-/* KATMANDAN 2 STİLLERİ */
 .header-main-bar {
   padding: 1rem 0;
   border-bottom: 1px solid #eee;
 }
-
 .header-main-bar .container {
   display: flex;
   justify-content: space-between;
@@ -103,20 +107,16 @@
   margin: 0 auto;
   padding: 0 20px;
 }
-
-/* LOGO STİLLERİ */
 .logo-wrapper {
   display: flex; 
   align-items: center;
   margin-right: 20px;
 }
-
 .teknosa-logo {
     height: 40px; 
     width: auto;
     display: block;
 }
-
 .search-box {
   display: flex;
   flex-grow: 1; 
@@ -126,7 +126,6 @@
   border-radius: 8px;
   overflow: hidden; 
 }
-
 .search-box input {
   flex-grow: 1;
   border: none;
@@ -134,7 +133,6 @@
   font-size: 1rem;
   outline: none;
 }
-
 .search-btn {
   background-color: #ff6000;
   color: white;
@@ -143,31 +141,26 @@
   cursor: pointer;
   font-size: 1rem;
 }
-
 .user-actions {
   display: flex;
   gap: 1.5rem;
 }
-
 .action-item {
   text-align: center;
   cursor: pointer;
   position: relative;
   color: #333;
 }
-
 .action-item .icon {
   font-size: 1.5rem;
   display: block;
   margin-bottom: 3px;
 }
-
 .action-item .label {
   font-size: 0.8rem;
   line-height: 1.1;
   color: #333;
 }
-
 .action-item .cart-count {
   position: absolute;
   top: 5px;
@@ -179,13 +172,10 @@
   font-size: 0.7rem;
   font-weight: bold;
 }
-
-/* KATMANDAN 3 STİLLERİ */
 .header-category-bar {
   background-color: #f7f7f7;
   padding: 0.75rem 0;
 }
-
 .header-category-bar .container {
   display: flex;
   align-items: center;
@@ -193,7 +183,6 @@
   margin: 0 auto;
   padding: 0 20px;
 }
-
 .all-products-btn {
   background-color: #000; 
   color: white;
@@ -205,13 +194,11 @@
   margin-right: 2rem;
   white-space: nowrap; 
 }
-
 .category-nav {
   display: flex;
   gap: 1.5rem;
   flex-grow: 1;
 }
-
 .category-link {
   text-decoration: none;
   color: #333;

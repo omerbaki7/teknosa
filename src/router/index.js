@@ -11,9 +11,18 @@ const router = createRouter({
       name: 'home',
       // HomeView bileşenini yükle
       component: HomeView 
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: () => import('../views/LoginView.vue')
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: () => import('../views/RegisterView.vue')
     }
-    // DİĞER ROTALARI (Login, Register)
-    // BU DOSYALARI OLUŞTURDUKTAN SONRA EKLEYECEĞİZ.
+   
   ]
 })
 

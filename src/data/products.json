@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "name": "Grundig GPDF 5711 5 Prg E Enerji 14 Kişilik Beyaz Bulaşık Makinesi",
+    "brand": "Grundig",
+    "price": 13.599,
+    "imageUrl": "/images/Grundig GPDF 5711 5 Prg E Enerji 14 Kişilik Beyaz Bulaşık Makinesi.webp",
+    "category": "Beyaz Eşya",
+    "discount": 5
+  },
+  {
+    "id": "2",
+    "name": "Apple iPhone 13 128GB Starlight",
+    "brand": "Apple",
+    "price": 32.799,
+    "imageUrl": "/images/Apple iPhone 13 128GB Starlight.webp",
+    "category": "Telefon",
+    "discount": 5
+  },
+  {
+    "id": "3",
+    "name": "Grundig Kva 7230 Delisia Coffee Entegre Süt Hazneli Tam Otomatik Espresso Makinesi",
+    "brand": "Grundig",
+    "price": 13.599,
+    "imageUrl": "/images/Grundig Kva 7230 Delisia Coffee Entegre Süt Hazneli Tam Otomatik Espresso Makinesi.webp",
+    "category": "Elektrikli Ev Aletleri",
+    "discount": 15
+  },
+  {
+    "id": "4",
+    "name": "Lenovo ThinkBook 14 21KG004NTR Intel Core i7-13700H 14 16 GB RAM 512 GB SSD WUXGA FreeDOS Notebook",
+    "brand": "Lenovo",
+    "price": 37.199,
+    "imageUrl": "/images/Lenovo ThinkBook 14 21KG004NTR Intel Core i7.webp",
+    "category": "Bilgisayar",
+    "discount": 5
+  },
+  {
+    "id": "5",
+    "name": "Philips 55 İnç 4K Smart TV",
+    "brand": "Philips",
+    "price": 28.999,
+    "imageUrl": "/images/Philips 55 İnç 4K Smart TV.webp",
+    "category": "Televizyon",
+    "discount": 15
+  }
+]

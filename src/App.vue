@@ -1,21 +1,18 @@
 <script setup>
-// RouterLink'e ek olarak useRoute ve computed'ı import ediyoruz
 import { RouterView, useRoute } from 'vue-router'
 import { computed } from 'vue'
 import Header from './components/Header.vue' 
+import Footer from './components/Footer.vue'
 
-// useRoute() fonksiyonu bize o an hangi sayfada olduğumuz bilgisini verir
 const route = useRoute();
 
-// Bu, o anki rotaya göre Header'ın gösterilip gösterilmeyeceğine karar veren
-// reaktif bir değişkendir.
+// Header'ın hangi sayfalarda görünüp görünmeyeceğini kontrol eden mantık
 const showMainHeader = computed(() => {
-  // Eğer sayfanın adı 'Login' ise veya 'Register' ise,
-  // Header'ı gösterme (false döndür).
+  // Login ve Register sayfalarında Header GİZLENSİN
   if (route.name === 'Login' || route.name === 'Register') {
     return false;
   }
-  // Diğer tüm sayfalarda (home vb.) Header'ı göster (true döndür).
+  // Diğer tüm sayfalarda GÖRÜNSÜN
   return true;
 });
 </script>
@@ -24,10 +21,12 @@ const showMainHeader = computed(() => {
   <Header v-if="showMainHeader" /> 
   
   <RouterView />
+
+  <Footer v-if="showMainHeader" />
 </template>
 
 <style>
-/* Global stiller aynı kalabilir */
+/* Global stiller */
 body {
   margin: 0;
   padding: 0;

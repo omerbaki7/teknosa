@@ -31,11 +31,16 @@
               <span class="icon">👤</span>
               <span class="label">Giriş Yap <br> Üye Ol</span>
             </div>
-          </RouterLink> <div class="action-item">
-            <span class="icon">🛒</span>
-            <span class="label">Sepetim</span>
-            <span class="cart-count">0</span>
-          </div>
+          </RouterLink>
+
+          <RouterLink to="/cart" class="action-item-link">
+            <div class="action-item">
+              <span class="icon">🛒</span>
+              <span class="label">Sepetim</span>
+              <span class="cart-count">1</span>
+            </div>
+          </RouterLink>
+
         </div>
       </div>
     </div>
@@ -58,7 +63,6 @@
 </template>
 
 <script setup>
-// HATA DÜZELTMESİ: RouterLink'i kullanmak için import etmemiz gerekiyor
 import { RouterLink } from 'vue-router';
 </script>
 
@@ -71,13 +75,11 @@ import { RouterLink } from 'vue-router';
     text-decoration: none;
 }
 
-/* HATA DÜZELTMESİ: RouterLink için yeni stil */
 .action-item-link {
-  text-decoration: none; /* Linkin alt çizgisini kaldırır */
-  color: inherit; /* Rengi üst elementten alır */
+  text-decoration: none;
+  color: inherit;
 }
 
-/* ... (diğer stiller aynı kalacak) ... */
 .header-top-bar {
   background-color: #383e5c; 
   padding: 0.5rem 0;

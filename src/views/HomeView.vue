@@ -1,24 +1,27 @@
 <script setup>
 import { ref } from 'vue';
-// 1. Yeni oluşturduğumuz JSON dosyasını import ediyoruz
 import productsData from '@/data/products.json'; 
-// 2. Yeni ProductCard bileşenini import ediyoruz
 import ProductCard from '@/components/ProductCard.vue';
+// 1. HeroSection bileşenini import ediyoruz
+import HeroSection from '@/components/HeroSection.vue';
 
-// 3. JSON'dan gelen veriyi reaktif bir 'ref' içine alıyoruz
 const products = ref(productsData);
 </script>
 
 <template>
-  <main class="home-container">
-    <h1 class="page-title">Öne Çıkan Ürünler</h1>
-    
-    <div class="product-grid">
-      <ProductCard 
-        v-for="product in products" 
-        :key="product.id" 
-        :product="product" 
-      />
+  <main class="home-page">
+    <HeroSection />
+
+    <div class="home-container">
+      <h1 class="page-title">Öne Çıkan Ürünler</h1>
+      
+      <div class="product-grid">
+        <ProductCard 
+          v-for="product in products" 
+          :key="product.id" 
+          :product="product" 
+        />
+      </div>
     </div>
   </main>
 </template>
@@ -31,14 +34,14 @@ const products = ref(productsData);
 }
 
 .page-title {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
   color: #383e5c;
+  font-weight: bold;
 }
 
 .product-grid {
   display: grid;
-  /* Ekrana sığdığı kadar kartı (min 250px) otomatik yerleştirir */
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1.5rem;
 }

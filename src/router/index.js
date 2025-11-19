@@ -1,15 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
-// Sadece var olan HomeView.vue dosyasını import ediyoruz
 import HomeView from '../views/HomeView.vue' 
+import CartView from '../views/CartView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      // Ana sayfa (/) istendiğinde
       path: '/',
       name: 'home',
-      // HomeView bileşenini yükle
       component: HomeView 
     },
     {
@@ -21,6 +19,11 @@ const router = createRouter({
       path: '/register',
       name: 'Register',
       component: () => import('../views/RegisterView.vue')
+    },
+    {
+      path: '/cart',
+      name: 'Cart',
+      component: CartView
     }
    
   ]

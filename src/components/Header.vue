@@ -15,12 +15,12 @@ const toggleDropdown = (state) => {
     <div class="header-top-bar">
       <div class="container nav-container">
         <nav class="top-nav">
-          <a href="#" class="top-link">Sipariş Takibi</a>
-          <a href="#" class="top-link">Alışveriş Kredisi</a>
-          <a href="#" class="top-link">Mağazalarımız</a>
-          <a href="#" class="top-link">Yardım Merkezi</a>
-          <a href="#" class="top-link">Kurumsal Satış</a>
-          <a href="#" class="top-link">Teknosa Blog</a>
+          <a href="#">Sipariş Takibi</a>
+          <a href="#">Alışveriş Kredisi</a>
+          <a href="#">Mağazalarımız</a>
+          <a href="#">Yardım Merkezi</a>
+          <a href="#">Kurumsal Satış</a>
+          <a href="#">Teknosa Blog</a>
         </nav>
       </div>
     </div>
@@ -29,7 +29,7 @@ const toggleDropdown = (state) => {
       <div class="container main-container">
         
         <router-link to="/" class="logo-wrapper">
-          <img src="/images/teknosa.png" alt="Teknosa" class="teknosa-logo">
+          <img src="/images/teknosa-logo.svg" alt="Teknosa" class="teknosa-logo">
         </router-link>
 
         <div class="search-container">
@@ -41,11 +41,11 @@ const toggleDropdown = (state) => {
 
         <div class="user-actions">
           <div class="brand-icons">
-             <span class="club-text">TEKNOCLUB</span>
+             <img src="/images/teknoclub-logo.svg" alt="TeknoClub" class="club-img">
           </div>
 
           <router-link to="/login" class="action-item">
-            <span class="icon">👤</span>
+            <img src="/images/user-icon.svg" class="action-icon" alt="Giriş">
             <div class="text-col">
                 <span class="sub-text">Giriş Yap</span>
                 <span class="main-text">Üye Ol</span>
@@ -53,7 +53,7 @@ const toggleDropdown = (state) => {
           </router-link>
 
           <router-link to="/cart" class="action-item">
-            <span class="icon">🛒</span>
+            <img src="/images/cart-icon.svg" class="action-icon" alt="Sepet">
             <div class="text-col">
                 <span class="sub-text">Sepetim</span>
             </div>
@@ -90,18 +90,14 @@ const toggleDropdown = (state) => {
           <a href="#" class="promo-link color-standard">Outlet</a>
           <a href="#" class="promo-link color-standard">Krediler</a>
           
-          <a href="#" class="preo-link">
-            <span class="preo-orange">preo</span>
-            <span class="preo-text">teknosa markasıdır.</span>
+          <a href="#" class="preo-img-link">
+            <img src="/images/preo-logo.svg" alt="Preo Teknosa Markasıdır" class="preo-img">
           </a>
 
           <div class="tekno-hizmet-wrapper" @mouseenter="toggleDropdown(true)" @mouseleave="toggleDropdown(false)">
-             <div class="hizmet-btn">
-                <div class="hizmet-text-col">
-                    <span class="hizmet-top">TEKNO</span>
-                    <span class="hizmet-bottom">HİZMET</span>
-                </div>
-                <span class="arrow-icon">▼</span>
+             <div class="hizmet-btn-img">
+                <img src="/images/tekno-hizmet-logo.svg" alt="Tekno Hizmet" class="hizmet-img">
+                <span class="arrow-icon-for-img">▼</span>
              </div>
              <div class="dropdown-menu" v-show="isDropdownOpen">
                 <a href="#">İptal</a>
@@ -150,14 +146,22 @@ a { text-decoration: none; color: inherit; }
   gap: 25px;
 }
 
-/* BURASI KESİN OLARAK DÜZELTİLDİ */
-.top-link {
-  color: #ffffff !important; /* Zorla Beyaz */
+/* --- BU KISIM GÜÇLENDİRİLDİ --- */
+/* Tüm durumlarda (normal, ziyaret edilmiş, hover) BEYAZ kalacak */
+.header-top-bar a {
+  color: #ffffff !important; 
   font-size: 11px;
   font-weight: bold;
-  opacity: 1 !important; /* Şeffaflık yok */
+  text-decoration: none;
+  opacity: 1 !important;
 }
-.top-link:hover { text-decoration: underline; }
+.header-top-bar a:visited {
+  color: #ffffff !important;
+}
+.header-top-bar a:hover {
+  text-decoration: underline;
+  color: #ffffff !important;
+}
 
 /* --- 2. ORTA BAR --- */
 .header-main-bar {
@@ -176,13 +180,15 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   padding-left: 0; 
 }
-.teknosa-logo { height: 34px; width: auto; }
+/* LOGO BOYUTU: 55px */
+.teknosa-logo { height: 55px; width: auto; }
 
 .search-container {
   flex: 1;
-  max-width: 700px;
+  max-width: 900px;
   position: relative;
   display: flex;
+  margin: 0 20px;
 }
 .search-input {
   width: 100%;
@@ -215,12 +221,14 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   gap: 25px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
+
 .brand-icons { display: none; } 
 @media (min-width: 1200px) { 
-    .brand-icons { display: block; color: #f76e11; font-size: 10px; font-weight: bold; border:1px solid #eee; padding: 2px 5px; } 
+    .brand-icons { display: flex; align-items: center; } 
 }
+.club-img { height: 28px; width: auto; object-fit: contain; }
 
 .action-item {
   display: flex;
@@ -228,28 +236,32 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   position: relative;
   color: #333;
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 700;
   text-align: center;
+  cursor: pointer;
 }
-.action-item .icon {
-  font-size: 20px;
-  margin-bottom: 2px;
-  color: #2d364e;
+
+.action-icon {
+  height: 38px;
+  width: auto;
+  margin-bottom: 4px;
+  display: block;
 }
+
 .text-col { display: flex; flex-direction: column; line-height: 1.2; }
 .sub-text { font-weight: 400; }
 .main-text { font-weight: 700; }
 
 .cart-badge {
   position: absolute;
-  top: -5px;
-  right: 5px;
+  top: -2px;
+  right: 0px;
   background-color: #f76e11;
   color: white;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: bold;
-  padding: 1px 5px;
+  padding: 2px 6px;
   border-radius: 10px;
 }
 
@@ -309,20 +321,13 @@ a { text-decoration: none; color: inherit; }
 .color-campaign { color: #3498db; }
 .color-standard { color: #333; }
 
-.preo-link { display: flex; align-items: center; gap: 2px; margin-left: 10px; }
-.preo-orange { color: #f76e11; font-weight: 900; font-style: italic; font-size: 14px; }
-.preo-text { color: #2d364e; font-size: 9px; font-weight: bold; }
+.preo-img-link { margin-left: 10px; display: flex; align-items: center; }
+.preo-img { height: 28px; width: auto; object-fit: contain; }
 
 .tekno-hizmet-wrapper { position: relative; margin-left: 15px; cursor: pointer; }
-.hizmet-btn {
-    display: flex; align-items: center; gap: 5px;
-    background-color: transparent; 
-    padding: 2px 5px;
-}
-.hizmet-text-col { display: flex; flex-direction: column; line-height: 1; text-align: left; }
-.hizmet-top { font-size: 9px; font-weight: 900; color: #0033a0; }
-.hizmet-bottom { font-size: 11px; font-weight: 900; color: #0033a0; }
-.arrow-icon { font-size: 8px; color: white; background: #0033a0; border-radius: 50%; padding: 2px; display: flex; align-items: center; justify-content: center; width: 14px; height: 14px; }
+.hizmet-btn-img { display: flex; align-items: center; gap: 5px; }
+.hizmet-img { height: 28px; width: auto; object-fit: contain; }
+.arrow-icon-for-img { font-size: 8px; color: white; background: #0033a0; border-radius: 50%; padding: 2px; display: flex; align-items: center; justify-content: center; width: 14px; height: 14px; }
 
 .dropdown-menu {
     position: absolute; top: 35px; right: 0;

@@ -51,7 +51,7 @@
     "price": 29.799,
     "imageUrl": "/images/Sony Playstation 5 Slim CD Edition.webp",
     "category": "Oyun Konsolu",
-    "discount": 0
+    "discount": 15
   },
   {
     "id": "7",
@@ -60,7 +60,7 @@
     "price": 32.999,
     "imageUrl": "/images/Ultima SL-5000 Otomatik Eğimli Masaj Motorlu Koşu Bandı.webp",
     "category": "Spor Outdoor",
-    "discount": 0
+    "discount": 5
   },
   {
     "id": "8",
@@ -69,6 +69,6 @@
     "price": 1.319,
     "imageUrl": "/images/JBL Tune 520bt Multi Connect Wireless Siyah Kulaklık.webp",
     "category": "Kulaklık",
-    "discount": 0
+    "discount": 10
   }
 ]

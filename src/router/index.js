@@ -1,5 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue' 
+
+// Sayfaları import ediyoruz
+import HomeView from '../views/HomeView.vue'
+// Login ve Register sayfalarını "lazy load" (istendiğinde yükle) yerine direkt import edelim, daha garanti olsun.
+import LoginView from '../views/LoginView.vue'
+import RegisterView from '../views/RegisterView.vue'
 import CartView from '../views/CartView.vue'
 import ProductDetailView from '../views/ProductDetailView.vue'
 
@@ -9,21 +14,21 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView 
+      component: HomeView
     },
     {
       path: '/login',
-      name: 'Login',
-      component: () => import('../views/LoginView.vue')
+      name: 'login',
+      component: LoginView
     },
     {
       path: '/register',
-      name: 'Register',
-      component: () => import('../views/RegisterView.vue')
+      name: 'register',
+      component: RegisterView
     },
     {
       path: '/cart',
-      name: 'Cart',
+      name: 'cart',
       component: CartView
     },
     {
@@ -31,7 +36,6 @@ const router = createRouter({
       name: 'product-detail',
       component: ProductDetailView
     }
-   
   ]
 })
 

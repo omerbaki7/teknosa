@@ -2,7 +2,7 @@
   <div class="login-layout">
     <header class="login-header">
       <RouterLink to="/">
-        <img src="/images/teknosa-logo.jpg" alt="Teknosa Logo" class="auth-logo">
+        <img src="/images/teknosa-logo.svg" alt="Teknosa Logo" class="auth-logo">
       </RouterLink>
     </header>
 
@@ -39,37 +39,35 @@
 
 <script setup>
 import { RouterLink } from 'vue-router';
-// Script boş kalabilir, tüm işi template ve style yapıyor
 </script>
 
 <style scoped>
-/* Sayfanın tamamını kaplayan ana yapı */
 .login-layout {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #f7f7f7; /* Ana arka plan rengi */
+  background-color: #f7f7f7;
 }
 
-/* 1. Üst Turuncu Header */
 .login-header {
-  background-color: #ff6000; /* Teknosa turuncusu */
-  padding: 1.5rem 0;
+  background-color: #ff6000;
+  padding: 1rem 0; /* Padding biraz azaltıldı çünkü logo büyüdü */
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* GÜNCELLENDİ: LOGO BOYUTU */
 .auth-logo {
-  height: 40px; /* Logo yüksekliği */
+  height: 80px; /* 40px -> 80px yapıldı */
   width: auto;
+  display: inline-block; /* Düzgün hizalama için */
 }
 
-/* 2. Ana Form Alanı */
 .auth-page {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-grow: 1; /* Kalan tüm dikey alanı kaplar */
+  flex-grow: 1;
   padding: 4rem 1rem;
 }
 
@@ -90,7 +88,6 @@ import { RouterLink } from 'vue-router';
   font-weight: 600;
 }
 
-/* Sekme Butonları (Giriş / Kayıt) */
 .tab-buttons {
   display: flex;
   justify-content: center;
@@ -107,19 +104,16 @@ import { RouterLink } from 'vue-router';
   text-decoration: none;
   color: #888;
   font-weight: 600;
-  border-radius: 20px; /* Yuvarlak kenarlar */
+  border-radius: 20px;
   transition: all 0.3s ease;
 }
 
 .tab-button.active {
   color: white;
-  background-color: #383e5c; /* Koyu lacivert */
+  background-color: #383e5c;
 }
 
-/* Form Alanları */
-.auth-form {
-  text-align: left;
-}
+.auth-form { text-align: left; }
 
 .form-input {
   width: 100%;
@@ -142,10 +136,7 @@ import { RouterLink } from 'vue-router';
   cursor: pointer;
   transition: background-color 0.3s;
 }
-
-.devam-et-btn:hover {
-    background-color: #e65600;
-}
+.devam-et-btn:hover { background-color: #e65600; }
 
 .or-divider {
   margin: 2rem 0;
@@ -153,21 +144,17 @@ import { RouterLink } from 'vue-router';
   font-size: 0.9rem;
 }
 
-/* Sosyal Medya Butonları (Dairesel) */
 .social-login {
   display: flex;
   justify-content: center;
   gap: 3rem;
 }
-
-.social-option {
-  text-align: center;
-}
+.social-option { text-align: center; }
 
 .social-btn {
   width: 55px;
   height: 55px;
-  border-radius: 50%; /* Tam daire */
+  border-radius: 50%;
   border: 1px solid #ddd;
   background-color: white;
   cursor: pointer;
@@ -175,7 +162,6 @@ import { RouterLink } from 'vue-router';
   font-weight: bold;
   transition: all 0.3s ease;
 }
-
 .social-btn:hover {
     border-color: #aaa;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);

@@ -1,12 +1,17 @@
+<script setup>
+import { RouterLink } from 'vue-router';
+</script>
+
 <template>
-  <div class="login-layout"> <header class="login-header">
+  <div class="login-layout">
+    <header class="login-header">
       <RouterLink to="/">
-        <img src="/images/teknosa-logo.jpg" alt="Teknosa Logo" class="auth-logo">
+        <img src="/images/teknosa-logo.svg" alt="Teknosa Logo" class="auth-logo">
       </RouterLink>
     </header>
 
     <main class="auth-page">
-      <div class="auth-box">
+      <div class="auth-box register-box">
         <h1 class="auth-title">Teknosa'ya Hoş Geldiniz</h1>
         
         <div class="tab-buttons">
@@ -32,9 +37,8 @@
               <label for="iletisim-izni">İletişim İzinleri</label>
           </div>
           
-          <div class="tekno-club-banner">
-              <img src="https://i.teknosa.com/teknosa/tpl/assets/img/tekno-club-logo.svg" alt="TeknoClub">
-              TeknoClub üyeliği ile kazanmak çok kolay!
+          <div class="banner-wrapper">
+              <img src="/images/campaign-collage.webp" alt="TeknoClub Fırsatları" class="full-banner-img">
           </div>
 
           <button class="devam-et-btn">Üye Ol</button>
@@ -48,13 +52,7 @@
   </div>
 </template>
 
-<script setup>
-import { RouterLink } from 'vue-router';
-// Bu sayfa şimdilik sadece görüntüden ibaret
-</script>
-
 <style scoped>
-/* LoginView ile BİREBİR AYNI stilleri kullanıyoruz */
 .login-layout {
   display: flex;
   flex-direction: column;
@@ -63,14 +61,18 @@ import { RouterLink } from 'vue-router';
 }
 .login-header {
   background-color: #ff6000;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-.auth-logo {
-  height: 40px;
-  width: auto;
+
+/* GÜNCELLENDİ: LOGO BOYUTU */
+.auth-logo { 
+    height: 80px; /* BÜYÜTÜLDÜ */
+    width: auto; 
+    display: inline-block;
 }
+
 .auth-page {
   display: flex;
   justify-content: center;
@@ -84,15 +86,17 @@ import { RouterLink } from 'vue-router';
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   width: 100%;
-  max-width: 450px;
+  max-width: 500px;
   text-align: center;
 }
+
 .auth-title {
   font-size: 1.8rem;
   margin-bottom: 2rem;
   color: #333;
   font-weight: 600;
 }
+
 .tab-buttons {
   display: flex;
   justify-content: center;
@@ -115,9 +119,12 @@ import { RouterLink } from 'vue-router';
   color: white;
   background-color: #383e5c;
 }
-.auth-form {
-  text-align: left;
-}
+
+.auth-form { text-align: left; }
+
+.name-fields { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+.name-fields input { margin-bottom: 0 !important; }
+
 .form-input {
   width: 100%;
   padding: 0.9rem 1rem;
@@ -126,6 +133,28 @@ import { RouterLink } from 'vue-router';
   border-radius: 4px;
   font-size: 1rem;
 }
+
+.checkbox-group {
+    text-align: left;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+    display: flex;
+    align-items: center;
+}
+.checkbox-group input { margin-right: 10px; }
+
+.banner-wrapper {
+    margin-bottom: 20px;
+    width: 100%;
+}
+.full-banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
 .devam-et-btn {
   width: 100%;
   padding: 1rem;
@@ -138,49 +167,13 @@ import { RouterLink } from 'vue-router';
   cursor: pointer;
   transition: background-color 0.3s;
 }
+.devam-et-btn:hover { background-color: #e65600; }
 
-/* KAYIT SAYFASINA ÖZEL EKLENEN STİLLER */
-.name-fields {
-  display: flex;
-  gap: 1rem;
-}
-.name-fields .form-input {
-  width: 50%; /* Ad ve Soyad yan yana %50 yer kaplasın */
-}
-.checkbox-group {
-    text-align: left;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-    color: #666;
-}
-.checkbox-group label {
-    margin-left: 0.5rem;
-}
-.tekno-club-banner {
-    background-color: #f0f8ff;
-    border: 1px solid #e0eaf3;
-    padding: 1rem;
-    margin-bottom: 1.5rem;
-    font-size: 0.9rem;
-    text-align: center;
-    color: #333;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-.tekno-club-banner img {
-    height: 20px;
-}
 .terms-text {
     font-size: 0.8rem;
     color: #999;
     text-align: center;
     margin-top: 1.5rem;
 }
-.terms-text a {
-    color: #ff6000;
-    text-decoration: none;
-}
+.terms-text a { color: #ff6000; text-decoration: none; }
 </style>

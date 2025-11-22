@@ -1,28 +1,33 @@
 <script setup>
 import { RouterView, useRoute } from 'vue-router'
 import { computed } from 'vue'
-import Header from './components/Header.vue' 
+import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 
 const route = useRoute();
 
-// Header'ın hangi sayfalarda görünüp görünmeyeceğini kontrol eden mantık
-const showMainHeader = computed(() => {
-  // Login ve Register sayfalarında Header GİZLENSİN
-  if (route.name === 'Login' || route.name === 'Register') {
+// Header ve Footer'ın hangi sayfalarda GİZLENECEĞİNİ belirleyen mantık
+const showLayout = computed(() => {
+  // Mevcut sayfanın yolu (path) veya adı (name)
+  const path = route.path;
+  const name = route.name;
+
+  // Eğer login veya register sayfasındaysak FALSE döndür (Gizle)
+  if (path === '/login' || path === '/register' || name === 'login' || name === 'register') {
     return false;
   }
-  // Diğer tüm sayfalarda GÖRÜNSÜN
+  
+  // Diğer tüm sayfalarda TRUE döndür (Göster)
   return true;
 });
 </script>
 
 <template>
-  <Header v-if="showMainHeader" /> 
+  <Header v-if="showLayout" /> 
   
   <RouterView />
 
-  <Footer v-if="showMainHeader" />
+  <Footer v-if="showLayout" />
 </template>
 
 <style>

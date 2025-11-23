@@ -145,15 +145,13 @@ onUnmounted(() => { stopAutoPlay(); });
 .campaign-item:hover { transform: translateY(-5px); }
 .banner-img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-/* --- YENİ: GENİŞ BANNERLAR (2'Lİ) --- */
+/* GENİŞ BANNERLAR (2'Lİ) --- */
 .wide-banners-grid {
   display: grid;
-  grid-template-columns: 1fr; /* Mobilde alt alta */
+  grid-template-columns: 1fr;
   gap: 20px;
   margin-top: 20px;
 }
-
-/* Tablet ve üstü için yan yana */
 @media (min-width: 768px) {
   .wide-banners-grid {
     grid-template-columns: repeat(2, 1fr);

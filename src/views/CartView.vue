@@ -73,7 +73,6 @@
 </template>
 
 <script setup>
-// Şimdilik script boş, sadece görüntü yapıyoruz
 </script>
 
 <style scoped>
@@ -111,7 +110,7 @@
 
 /* --- SOL TARAF --- */
 .cart-items {
-  flex: 2; /* Geniş alan */
+  flex: 2;
   width: 100%;
 }
 
@@ -156,7 +155,7 @@
 
 .delivery-note {
   font-size: 0.8rem;
-  color: #27ae60; /* Yeşil */
+  color: #27ae60;
 }
 
 .item-actions {
@@ -205,7 +204,7 @@
 }
 
 .warranty-option {
-  background-color: #eefbf6; /* Açık yeşil */
+  background-color: #eefbf6;
   padding: 1rem;
   margin-top: 1.5rem;
   border-radius: 4px;
@@ -229,9 +228,9 @@
   font-size: 0.9rem;
 }
 
-/* --- SAĞ TARAF (ÖZET) --- */
+/* --- SAĞ TARAF --- */
 .cart-summary {
-  flex: 1; /* Dar alan */
+  flex: 1; 
   width: 100%;
   background-color: white;
   padding: 1.5rem;

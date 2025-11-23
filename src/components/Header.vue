@@ -146,8 +146,6 @@ a { text-decoration: none; color: inherit; }
   gap: 25px;
 }
 
-/* --- BU KISIM GÜÇLENDİRİLDİ --- */
-/* Tüm durumlarda (normal, ziyaret edilmiş, hover) BEYAZ kalacak */
 .header-top-bar a {
   color: #ffffff !important; 
   font-size: 11px;
@@ -180,7 +178,6 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   padding-left: 0; 
 }
-/* LOGO BOYUTU: 55px */
 .teknosa-logo { height: 55px; width: auto; }
 
 .search-container {

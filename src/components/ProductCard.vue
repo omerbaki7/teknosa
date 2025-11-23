@@ -55,7 +55,7 @@ const goToDetail = () => {
 
 .product-card:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-color: #ff6000; /* Üzerine gelince turuncu çerçeve */
+  border-color: #ff6000;
 }
 
 .product-image-container {

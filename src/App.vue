@@ -31,7 +31,6 @@ const showLayout = computed(() => {
 </template>
 
 <style>
-/* Global stiller */
 body {
   margin: 0;
   padding: 0;

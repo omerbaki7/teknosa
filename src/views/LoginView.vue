@@ -51,16 +51,15 @@ import { RouterLink } from 'vue-router';
 
 .login-header {
   background-color: #ff6000;
-  padding: 1rem 0; /* Padding biraz azaltıldı çünkü logo büyüdü */
+  padding: 1rem 0;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* GÜNCELLENDİ: LOGO BOYUTU */
 .auth-logo {
-  height: 80px; /* 40px -> 80px yapıldı */
+  height: 80px;
   width: auto;
-  display: inline-block; /* Düzgün hizalama için */
+  display: inline-block;
 }
 
 .auth-page {

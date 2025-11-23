@@ -157,7 +157,7 @@
 }
 
 .contact-btn {
-  background-color: #383e5c; /* Koyu Lacivert */
+  background-color: #383e5c;
   color: white;
   border: none;
   padding: 0.8rem 1.5rem;
@@ -168,7 +168,7 @@
 
 /* Alt Kısım */
 .footer-bottom {
-  background-color: #383e5c; /* Koyu Lacivert */
+  background-color: #383e5c;
   color: white;
   padding: 1.5rem 0;
 }

@@ -66,9 +66,8 @@ import { RouterLink } from 'vue-router';
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* GÜNCELLENDİ: LOGO BOYUTU */
 .auth-logo { 
-    height: 80px; /* BÜYÜTÜLDÜ */
+    height: 80px;
     width: auto; 
     display: inline-block;
 }

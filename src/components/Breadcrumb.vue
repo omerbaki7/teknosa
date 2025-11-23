@@ -60,7 +60,6 @@ defineProps({
 .active {
   color: #333;
   font-weight: bold;
-  /* Uzun isimlerde taşmayı önle */
   white-space: nowrap; 
   overflow: hidden;
   text-overflow: ellipsis;

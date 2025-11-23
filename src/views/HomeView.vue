@@ -2,7 +2,6 @@
 import { ref } from 'vue';
 import productsData from '@/data/products.json'; 
 import ProductCard from '@/components/ProductCard.vue';
-// 1. HeroSection bileşenini import ediyoruz
 import HeroSection from '@/components/HeroSection.vue';
 
 const products = ref(productsData);

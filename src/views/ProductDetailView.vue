@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import productsData from '@/data/products.json'; 
-import Breadcrumb from '@/components/Breadcrumb.vue'; // 10. Bileşenimiz
+import Breadcrumb from '@/components/Breadcrumb.vue';
 
 const route = useRoute();
 const product = ref(null);

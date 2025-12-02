@@ -95,7 +95,6 @@
   padding: 0 20px;
 }
 
-/* Link Sütunları */
 .footer-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -132,7 +131,6 @@
   text-decoration: underline;
 }
 
-/* Çağrı Merkezi Kutusu */
 .contact-column {
   text-align: right;
 }
@@ -157,7 +155,7 @@
 }
 
 .contact-btn {
-  background-color: #383e5c;
+  background-color: #383e5c; 
   color: white;
   border: none;
   padding: 0.8rem 1.5rem;
@@ -166,9 +164,8 @@
   cursor: pointer;
 }
 
-/* Alt Kısım */
 .footer-bottom {
-  background-color: #383e5c;
+  background-color: #383e5c; 
   color: white;
   padding: 1.5rem 0;
 }

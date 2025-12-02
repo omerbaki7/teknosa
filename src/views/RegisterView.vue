@@ -1,13 +1,15 @@
 <script setup>
 import { RouterLink } from 'vue-router';
+import BaseInput from '@/components/atoms/BaseInput.vue';
+import BaseButton from '@/components/atoms/BaseButton.vue';
 </script>
 
 <template>
   <div class="login-layout">
     <header class="login-header">
-      <RouterLink to="/">
-        <img src="/images/teknosa-logo.svg" alt="Teknosa Logo" class="auth-logo">
-      </RouterLink>
+      <router-link to="/">
+        <img src="/images/teknosa-logo.svg" alt="Teknosa" class="auth-logo">
+      </router-link>
     </header>
 
     <main class="auth-page">
@@ -15,33 +17,46 @@ import { RouterLink } from 'vue-router';
         <h1 class="auth-title">Teknosa'ya Hoş Geldiniz</h1>
         
         <div class="tab-buttons">
-          <RouterLink to="/login" class="tab-button">Üye Girişi</RouterLink>
-          <button class="tab-button active">Üye Ol</button>
+          <router-link to="/login" class="tab-btn">Üye Girişi</router-link>
+          <button class="tab-btn active">Üye Ol</button>
         </div>
 
         <form class="auth-form" @submit.prevent>
-          <div class="name-fields">
-            <input type="text" placeholder="Ad" class="form-input">
-            <input type="text" placeholder="Soyad" class="form-input">
+          <div class="form-row">
+            <div class="input-wrapper">
+              <BaseInput placeholder="Ad" />
+            </div>
+            <div class="input-wrapper">
+              <BaseInput placeholder="Soyad" />
+            </div>
           </div>
-          <input type="email" placeholder="E-Posta" class="form-input">
-          <input type="tel" placeholder="(5xx) xxx xx xx" class="form-input">
-          <input type="password" placeholder="Şifre" class="form-input">
+
+          <div class="input-group">
+            <BaseInput placeholder="E-Posta" type="email" />
+          </div>
+          <div class="input-group">
+            <BaseInput placeholder="(5xx) xxx xx xx" type="tel" />
+          </div>
+          <div class="input-group">
+            <BaseInput placeholder="Şifre" type="password" />
+          </div>
           
           <div class="checkbox-group">
-              <input type="checkbox" id="profile-izni">
-              <label for="profile-izni">Profilleme ve Kişiselleştirme İzni</label>
-          </div>
-          <div class="checkbox-group">
-              <input type="checkbox" id="iletisim-izni">
-              <label for="iletisim-izni">İletişim İzinleri</label>
+              <label class="checkbox-label">
+                <input type="checkbox"> Profilleme ve Kişiselleştirme İzni
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox"> İletişim İzinleri
+              </label>
           </div>
           
           <div class="banner-wrapper">
               <img src="/images/campaign-collage.webp" alt="TeknoClub Fırsatları" class="full-banner-img">
           </div>
 
-          <button class="devam-et-btn">Üye Ol</button>
+          <div class="btn-group">
+            <BaseButton text="Üye Ol" variant="primary" :fullWidth="true" />
+          </div>
           
           <p class="terms-text">
               Üye ol butonuna basarak <a href="#">üyelik sözleşmesini</a> okuduğunuzu ve kabul ettiğinizi onaylıyorsunuz.
@@ -53,126 +68,24 @@ import { RouterLink } from 'vue-router';
 </template>
 
 <style scoped>
-.login-layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-color: #f7f7f7;
-}
-.login-header {
-  background-color: #ff6000;
-  padding: 1rem 0;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.auth-logo { 
-    height: 80px;
-    width: auto; 
-    display: inline-block;
-}
-
-.auth-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-  padding: 4rem 1rem;
-}
-.auth-box {
-  background-color: white;
-  padding: 2rem 3rem 3rem 3rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  width: 100%;
-  max-width: 500px;
-  text-align: center;
-}
-
-.auth-title {
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
-  color: #333;
-  font-weight: 600;
-}
-
-.tab-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-.tab-button {
-  padding: 0.6rem 1.5rem;
-  border: none;
-  background-color: transparent;
-  font-size: 1rem;
-  cursor: pointer;
-  text-decoration: none;
-  color: #888;
-  font-weight: 600;
-  border-radius: 20px;
-  transition: all 0.3s ease;
-}
-.tab-button.active {
-  color: white;
-  background-color: #383e5c;
-}
-
-.auth-form { text-align: left; }
-
-.name-fields { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
-.name-fields input { margin-bottom: 0 !important; }
-
-.form-input {
-  width: 100%;
-  padding: 0.9rem 1rem;
-  margin-bottom: 1.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-}
-
-.checkbox-group {
-    text-align: left;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-    color: #666;
-    display: flex;
-    align-items: center;
-}
-.checkbox-group input { margin-right: 10px; }
-
-.banner-wrapper {
-    margin-bottom: 20px;
-    width: 100%;
-}
-.full-banner-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 4px;
-}
-
-.devam-et-btn {
-  width: 100%;
-  padding: 1rem;
-  background-color: #ff6000;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-.devam-et-btn:hover { background-color: #e65600; }
-
-.terms-text {
-    font-size: 0.8rem;
-    color: #999;
-    text-align: center;
-    margin-top: 1.5rem;
-}
-.terms-text a { color: #ff6000; text-decoration: none; }
+/* CSS Kodları */
+.login-layout { display: flex; flex-direction: column; min-height: 100vh; background-color: #f7f7f7; font-family: Arial, sans-serif; }
+.login-header { background-color: #f76e11; padding: 15px 0; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.auth-logo { height: 40px; width: auto; }
+.auth-page { flex: 1; display: flex; justify-content: center; align-items: center; padding: 40px 20px; }
+.auth-box { background-color: white; width: 100%; max-width: 520px; padding: 40px 50px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; }
+.auth-title { font-size: 20px; font-weight: 700; color: #2d364e; margin-bottom: 30px; }
+.tab-buttons { display: flex; justify-content: center; gap: 20px; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+.tab-btn { background: none; border: none; font-size: 14px; font-weight: 600; color: #999; cursor: pointer; padding-bottom: 5px; text-decoration: none; }
+.tab-btn.active { color: #2d364e; border-bottom: 3px solid #2d364e; }
+.form-row { display: flex; gap: 15px; margin-bottom: 20px; }
+.input-wrapper { flex: 1; }
+.input-group { margin-bottom: 20px; }
+.checkbox-group { text-align: left; margin-bottom: 20px; font-size: 12px; color: #666; }
+.checkbox-label { display: block; margin-bottom: 8px; cursor: pointer; }
+.checkbox-label input { margin-right: 8px; }
+.banner-wrapper { margin-bottom: 20px; width: 100%; }
+.full-banner-img { width: 100%; height: auto; display: block; border-radius: 4px; }
+.terms-text { font-size: 11px; color: #999; text-align: center; margin-top: 20px; line-height: 1.4; }
+.terms-text a { color: #f76e11; text-decoration: none; font-weight: bold; }
 </style>

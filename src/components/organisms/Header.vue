@@ -35,7 +35,7 @@ const toggleDropdown = (state) => {
         <div class="search-container">
           <input type="text" placeholder="Ürün, kategori veya marka ara" class="search-input" />
           <button class="search-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
           </button>
         </div>
 
@@ -145,21 +145,13 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   gap: 25px;
 }
-
-.header-top-bar a {
+.top-link {
   color: #ffffff !important; 
   font-size: 11px;
   font-weight: bold;
-  text-decoration: none;
   opacity: 1 !important;
 }
-.header-top-bar a:visited {
-  color: #ffffff !important;
-}
-.header-top-bar a:hover {
-  text-decoration: underline;
-  color: #ffffff !important;
-}
+.top-link:hover { text-decoration: underline; }
 
 /* --- 2. ORTA BAR --- */
 .header-main-bar {
@@ -178,22 +170,23 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   padding-left: 0; 
 }
-.teknosa-logo { height: 55px; width: auto; }
+.teknosa-logo { height: 56px; width: auto; }
 
+/* --- ARAMA ÇUBUĞU (GÜNCELLENDİ: DAHA BÜYÜK VE OVAL) --- */
 .search-container {
   flex: 1;
-  max-width: 900px;
+  max-width: 900px; 
   position: relative;
   display: flex;
   margin: 0 20px;
 }
 .search-input {
   width: 100%;
-  height: 44px;
+  height: 52px; /* Yükseklik artırıldı */
   border: 2px solid #f76e11;
-  border-radius: 22px;
-  padding: 0 50px 0 20px;
-  font-size: 14px;
+  border-radius: 30px; /* Tam oval kenar */
+  padding: 0 70px 0 25px; /* İç boşluklar artırıldı */
+  font-size: 15px; /* Yazı biraz büyütüldü */
   color: #333;
   outline: none;
   background-color: #fff;
@@ -202,16 +195,17 @@ a { text-decoration: none; color: inherit; }
   position: absolute;
   right: -2px;
   top: 0;
-  height: 44px;
-  width: 55px;
+  height: 52px; /* Input ile aynı yükseklik */
+  width: 70px; /* Buton genişletildi */
   background-color: #f76e11;
   border: 2px solid #f76e11;
-  border-radius: 0 22px 22px 0;
+  border-radius: 0 30px 30px 0; /* Sadece sağ tarafı oval yap */
   color: white;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 }
 
 .user-actions {
